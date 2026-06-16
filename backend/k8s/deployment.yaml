@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tienda-backend
+  labels:
+    app: tienda-backend
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: tienda-backend
+
+  template:
+    metadata:
+      labels:
+        app: tienda-backend
+
+    spec:
+      containers:
+        - name: backend
+          image: tienda-backend:latest
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: 3000
+
+          env:
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: tienda-config
+                  key: DB_HOST
+
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: tienda-config
+                  key: DB_PORT
+
+            - name: DB_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: tienda-config
+                  key: DB_USERNAME
+
+            - name: DB_DATABASE
+              valueFrom:
+                configMapKeyRef:
+                  name: tienda-config
+                  key: DB_DATABASE
+
+            - name: DB_SSL
+              valueFrom:
+                configMapKeyRef:
+                  name: tienda-config
+                  key: DB_SSL
+
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: tienda-secret
+                  key: DB_PASSWORD

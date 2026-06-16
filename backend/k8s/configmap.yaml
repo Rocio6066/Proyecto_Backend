@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tienda-config
+
+data:
+  DB_HOST: aws-1-us-east-1.pooler.supabase.com
+  DB_PORT: "6543"
+  DB_USERNAME: postgres.pzasdfnbbglpoyahxabn
+  DB_DATABASE: postgres
+  DB_SSL: "false"
