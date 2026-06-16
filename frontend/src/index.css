@@ -1,0 +1,108 @@
+/* ===== RESET ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== COLORES ===== */
+
+:root {
+  --oro: #D4AF37;
+  --guindo: #800020;
+  --verde: #1B4D3E;
+  --negro: #000000;
+  --negro-card: #0A0A0A;
+  --gris: #CCCCCC;
+  --gris-oscuro: #222222;
+}
+
+/* ===== BODY ===== */
+
+body {
+  background: var(--negro);
+  color: white;
+  font-family: Georgia, 'Times New Roman', serif;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ===== SCROLL ===== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--oro);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f0ca52;
+}
+
+/* ===== LINKS ===== */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== BOTONES ===== */
+
+button {
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* ===== INPUTS ===== */
+
+input,
+textarea,
+select {
+  background: #111;
+  border: 1px solid var(--oro);
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #f0ca52;
+}
+
+/* ===== TABLAS ===== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: var(--oro);
+  color: black;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #222;
+}
+
+tbody tr:hover {
+  background: #111;
+}
